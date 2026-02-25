@@ -8,10 +8,7 @@ router = APIRouter(
     dependencies=[Depends(get_token_header)],
     responses={404: {"description": "Not found"}},
 )
-
-
 fake_items_db = {"plumbus": {"name": "Plumbus"}, "gun": {"name": "Portal Gun"}}
-
 
 @router.get("/")
 async def read_items():
