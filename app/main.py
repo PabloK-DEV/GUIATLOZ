@@ -7,7 +7,7 @@ from app.routers import items, users
 from fastapi.middleware.cors import CORSMiddleware
 
 
-app = FastAPI()
+app = FastAPI(version="0.0.2")
 
 origins = [
     "http://localhost",
