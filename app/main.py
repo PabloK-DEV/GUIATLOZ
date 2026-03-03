@@ -7,13 +7,14 @@ from app.routers import items, users
 from fastapi.middleware.cors import CORSMiddleware
 
 
-app = FastAPI(version="0.0.2")
+app = FastAPI(version="0.0.3")
 
 origins = [
     "http://localhost",
     "http://localhost:*",
     "http://localhost:8080",
     "http://localhost:3000",
+    "http://localhost:5173",
     "https://.*.vercel.app",
 ]
 
