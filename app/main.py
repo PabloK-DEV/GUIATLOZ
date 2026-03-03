@@ -1,13 +1,13 @@
 from fastapi import FastAPI, Depends
 import requests
-from .routers import root, category
+from .routers import category
 from .dependencies import get_query_token, get_token_header
 from .internal import admin
 from app.routers import items, users
 from fastapi.middleware.cors import CORSMiddleware
 
 
-app = FastAPI(version="0.0.3")
+app = FastAPI(version="0.0.4")
 
 origins = [
     "http://localhost",
@@ -15,7 +15,7 @@ origins = [
     "http://localhost:8080",
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://.*.vercel.app",
+    "https://hyrule-wiki.vercel.app",
 ]
 
 app.add_middleware(
@@ -26,7 +26,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(root.router)
 app.include_router(category.router)
 
 app.include_router(users.router)
